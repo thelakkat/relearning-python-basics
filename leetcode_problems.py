@@ -51,3 +51,19 @@ print (Solution.isPalindrome(1,-1234321))
 # --------string method --------------
 
 # --------non-string method --------------
+
+class Solution(object):
+    def isPalindrome1(self, x):
+        if x<0: return False
+        myArray=[]
+        while x>0:
+            myArray.append(x%10)
+            print ("this is my array ",myArray)
+            x = x//10
+            print("this is the new X ", x) 
+            if x == 0: break
+        for i in range(len(myArray)):
+            if myArray[i] != myArray[len(myArray)-i-1]: return False
+        return True
+        
+print (Solution.isPalindrome1(1,12321))
